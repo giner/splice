@@ -222,10 +222,25 @@
                 }
               }
             },
-            "skipInitialization": {
+            "enableBftSequencer": {
                 "type": "boolean"
             },
-            "enableBftSequencer": {
+            "cometBFT": {
+              "type": "object",
+              "required": ["enabled"],
+              "properties": {
+                "enabled": {
+                  "type": "boolean"
+                },
+                "connectionUri": {
+                  "type": "string"
+                },
+                "externalGovernanceKey": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "skipInitialization": {
                 "type": "boolean"
             }
           }
