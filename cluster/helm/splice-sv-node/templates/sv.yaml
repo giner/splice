@@ -214,6 +214,9 @@ spec:
                       port = 5008
                     }
                     external-public-api-url = {{ .Values.domain.sequencerPublicUrl | quote }}
+                    {{- if .Values.domain.sequencerAvailabilityDelay }}
+                    sequencer-availability-delay = {{ .Values.domain.sequencerAvailabilityDelay | quote }}
+                    {{- end }}
                     {{- if .Values.domain.sequencerPruningConfig.enabled }}
                     pruning {
                       pruning-interval = {{ .Values.domain.sequencerPruningConfig.pruningInterval | quote }}
@@ -248,6 +251,9 @@ spec:
                       port = 5008
                     }
                     external-public-api-url = {{ $sync.sequencerPublicUrl | quote }}
+                    {{- if $sync.sequencerAvailabilityDelay }}
+                    sequencer-availability-delay = {{ $sync.sequencerAvailabilityDelay | quote }}
+                    {{- end }}
                     {{- if $sync.sequencerPruningConfig.enabled }}
                     pruning {
                       pruning-interval = {{ $sync.sequencerPruningConfig.pruningInterval | quote }}
@@ -296,6 +302,9 @@ spec:
                       port = 5008
                     }
                     external-public-api-url = {{ $sync.sequencerPublicUrl | quote }}
+                    {{- if $sync.sequencerAvailabilityDelay }}
+                    sequencer-availability-delay = {{ $sync.sequencerAvailabilityDelay | quote }}
+                    {{- end }}
                     {{- if $sync.sequencerPruningConfig.enabled }}
                     pruning {
                       pruning-interval = {{ $sync.sequencerPruningConfig.pruningInterval | quote }}
