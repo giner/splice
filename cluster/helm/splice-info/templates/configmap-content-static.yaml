@@ -42,5 +42,5 @@ metadata:
   name: {{ .Release.Name }}-content-static
   namespace: {{ .Release.Namespace }}
 data:
-  index.html: {{ include "configmap-content-static" . | fromYaml | toJson | quote }}
+  index.html: {{ include "configmap-content-static" . | fromYaml | mustToPrettyJson | quote }}
 {{- end }}
